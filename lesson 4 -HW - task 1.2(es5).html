@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+	<script>
+		function Post(author, text, date){
+			this.author = author;
+			this.text = text;
+			this.date = date;
+		}
+
+		Post.prototype.edit = function(text){
+			this.text = text;
+		}
+
+		function AttachedPost(author, text, date, highlighted){
+			Post.call(this, author, text, date);
+			this.highlighted = highlighted;
+			this.highlighted = false;
+		}
+		AttachedPost.prototype = Object.create(Post.prototype);
+		AttachedPost.prototype.constructor = AttachedPost;
+
+		AttachedPost.prototype.makeTextHighlighted = function(){
+			this.highlighted = true;
+		}
+		
+		const Post1 = new Post('Вася Пупкин', 'Привет, мир', '22.03.2014');
+		console.log(Post1);
+		Post1.edit('Hello world');
+		console.log(Post1);
+		const AttachedPost1 = new AttachedPost('Виктор Грозный', 'Пока, мир', '23.03.2014');
+		console.log(AttachedPost1);
+		AttachedPost1.edit('Goodbye world');
+		console.log(AttachedPost1);
+		AttachedPost1.makeTextHighlighted();
+		console.log(AttachedPost1);
+		
+	</script>
+
+</body>
+</html>

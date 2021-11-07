@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+	<script>
+		function Product(name, price){
+			this.name = name;
+			this.price = price;
+		}
+
+		Product.prototype.make25PercentDiscount = function(){
+			this.price = this.price * 0.85;
+			console.log(`С учетом скидки ${this.name} стоит: ${this.price}`);
+		}
+
+		const Product1 = new Product('Свитер', 1960);
+		const Product2 = new Product('Кроссовки', 5440);
+
+		Product1.make25PercentDiscount();
+		Product2.make25PercentDiscount();
+
+	</script>
+
+</body>
+</html>
