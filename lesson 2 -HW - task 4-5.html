@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+	<script>
+		//task 4
+		function Addition(num1, num2){
+			return num1 + num2;
+		}
+
+		function Subtraction(num1, num2){
+			return num1 - num2;
+		}
+
+		function Division(num1,num2){
+			return num1 / num2;
+		}
+
+		function Multiplication(num1,num2){
+			return num1 * num2;
+		}
+
+		//task 5
+
+		function mathOperation(num1, num2, operation){
+			switch (operation){
+				case "Addition":
+					return Addition(num1, num2);
+				case "Subtraction":
+					return Subtraction(num1, num2);
+				case "Division":
+					return Division(num1, num2);
+				case "Multiplication":
+					return Multiplication(num1, num2);
+					
+			}
+		}
+		
+		let a = +prompt("Enter the first number: ");
+		let b = +prompt("Enter the second number: ");
+		let c = prompt("Enter an action: ")
+
+		//task 4 - checking
+
+		// let fin1 = Addition(a, b);
+		// let fin2 = Subtraction(a, b);
+		// let fin3 = Division(a, b);
+		// let fin4 = Multiplication(a, b);
+		
+		// alert(fin1);
+		// alert(fin2);
+		// alert(fin3);
+		// alert(fin4);
+
+		//task 5 - checking
+		
+		// let fin5 = mathOperation(1, 2, "Addition");
+		// let fin6 = mathOperation(8, 7, "Subtraction");
+		// let fin7 = mathOperation(12, 4, "Division");
+		// let fin8 = mathOperation(6, 4, "Multiplication");
+
+		let fin9 = mathOperation(a, b, c);
+
+		alert(fin9.toFixed(2));
+
+	</script>
+
+</body>
+</html>
